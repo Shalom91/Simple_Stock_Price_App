@@ -1,6 +1,10 @@
 import yfinance as yf
 import pandas as pd
 import streamlit as st
+from PIL import Image
+
+image = Image.open('logo.png')
+st.image(image, use_column_width=True)
 
 st.write("""
 # SIMPLE STOCK PRICE APP
