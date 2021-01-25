@@ -9,11 +9,17 @@ st.image(image, use_column_width=True)
 st.write("""
 # SIMPLE STOCK PRICE APP
 
-Displaying the daily **closing price** and **volume** traded of Google
+Displaying the daily **closing price** and **volume** traded of stock
 
+***
 """)
 
-tickerSymbol = 'GOOGL'
+# Input text box
+st.header("Enter ticker symbol of stock ")
+ticker_input = 'MSFT'
+tickerSymbol = st.text_area("Ticker Symbol", ticker_input, height=50)
+
+tickerSymbol = tickerSymbol.upper()
 
 tickerData = yf.Ticker(tickerSymbol)
 
